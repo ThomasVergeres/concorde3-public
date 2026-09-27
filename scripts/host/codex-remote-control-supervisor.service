@@ -1,0 +1,22 @@
+[Unit]
+Description=Codex headless Remote Control supervisor
+Documentation=https://developers.openai.com/codex/
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=1800
+StartLimitBurst=5
+
+[Service]
+Type=simple
+WorkingDirectory=%h
+EnvironmentFile=-%h/.config/concorde3/codex-remote-supervisor.env
+ExecStart=%h/bin/codex-remote-daemon-repair
+Restart=on-failure
+RestartSec=60s
+TimeoutStopSec=60s
+# The managed daemon has its own lifecycle. Reloading this observer must not
+# terminate the server, tool processes, or ongoing conversation turns.
+KillMode=process
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "model": "luna6-max",
+  "production_model": "luna6-max",
+  "max_shots": 2,
+  "routine": [
+    "AR08"
+  ],
+  "continuity": [
+    "UX01",
+    "AR05",
+    "AR04"
+  ],
+  "judgment": [
+    "AU02",
+    "AR01"
+  ],
+  "diagnostic_only": [
+    "RG01",
+    "CF01",
+    "AR06",
+    "AR07",
+    "AR09",
+    "HD01",
+    "LR01",
+    "AR02",
+    "AR03",
+    "BD03",
+    "BD06",
+    "AT03",
+    "FC01",
+    "PC01",
+    "BP01",
+    "SY01",
+    "RC01",
+    "BP02",
+    "BP03",
+    "UX02",
+    "SY02",
+    "SY03",
+    "SY04",
+    "SY05",
+    "SY06",
+    "AC01",
+    "GC01",
+    "RG02"
+  ],
+  "retired_from_routine": [
+    "BD01",
+    "BD02",
+    "AT01",
+    "AT02",
+    "AU01"
+  ],
+  "note": "Historical case selection for this evaluation dataset. Each registered case has one disposition. Choose comparison cases and controls before running; retain all outcomes."
+}

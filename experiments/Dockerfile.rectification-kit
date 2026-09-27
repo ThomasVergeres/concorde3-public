@@ -1,0 +1,14 @@
+# Compile an explicitly selected experimental practice without changing defaults.
+# Pair with Dockerfile.runtime-overlay to retain the baseline OS/harness layers.
+FROM golang:1.24-bookworm AS build
+WORKDIR /src
+COPY go.mod ./
+COPY core ./core
+COPY cmd ./cmd
+ARG RECTIFICATION_KIT
+COPY ${RECTIFICATION_KIT} /src/core/kits/rectification.md
+ARG WORK_KIT=core/kits/memory.md
+COPY ${WORK_KIT} /src/core/kits/memory.md
+ARG VCS_REF=unversioned-experimental-kit
+RUN go test -race ./... && go vet ./...
+RUN CGO_ENABLED=0 go build -trimpath -ldflags "-X github.com/ThomasVergeres/concorde3-public/core.BuildStamp=${VCS_REF}" -o /concorde3 ./cmd/concorde3

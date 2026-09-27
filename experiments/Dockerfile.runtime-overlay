@@ -1,0 +1,7 @@
+# Preserve OS and harness layers when comparing only the Concorde runtime.
+ARG RUNTIME_IMAGE
+ARG BASE_IMAGE
+FROM ${RUNTIME_IMAGE} AS runtime
+FROM ${BASE_IMAGE}
+ARG BINARY_PATH=/usr/local/bin/concorde3
+COPY --from=runtime ${BINARY_PATH} /usr/local/bin/concorde3

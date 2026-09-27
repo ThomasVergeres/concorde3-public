@@ -1,0 +1,8 @@
+# Optional runtime affordance experiment, not a new Concorde kernel dependency.
+# Supply an immutable existing image; preserve its binary and harness.
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends curl procps \
+    && apt-get clean
+USER node

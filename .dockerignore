@@ -1,0 +1,11 @@
+*
+!go.mod
+!core
+!core/**
+!cmd
+!cmd/**
+!Dockerfile
+!evals
+evals/**
+!evals/kits
+!evals/kits/*.md

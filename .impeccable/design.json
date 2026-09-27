@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T09:11:42.831Z",
+  "title": "Design System: Concorde Owner Inbox",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground",
+        "tonalRamp": [
+          "oklch(15.00% 0.00264 106.45)",
+          "oklch(26.43% 0.00264 106.45)",
+          "oklch(37.86% 0.00264 106.45)",
+          "oklch(49.29% 0.00264 106.45)",
+          "oklch(60.71% 0.00264 106.45)",
+          "oklch(72.14% 0.00264 106.45)",
+          "oklch(83.57% 0.00264 106.45)",
+          "oklch(95.00% 0.00264 106.45)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.00537 95.10)",
+          "oklch(26.43% 0.00537 95.10)",
+          "oklch(37.86% 0.00537 95.10)",
+          "oklch(49.29% 0.00537 95.10)",
+          "oklch(60.71% 0.00537 95.10)",
+          "oklch(72.14% 0.00537 95.10)",
+          "oklch(83.57% 0.00537 95.10)",
+          "oklch(95.00% 0.00537 95.10)"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.00202 106.60)",
+          "oklch(26.43% 0.00202 106.60)",
+          "oklch(37.86% 0.00202 106.60)",
+          "oklch(49.29% 0.00202 106.60)",
+          "oklch(60.71% 0.00202 106.60)",
+          "oklch(72.14% 0.00202 106.60)",
+          "oklch(83.57% 0.00202 106.60)",
+          "oklch(95.00% 0.00202 106.60)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.00800 97.48)",
+          "oklch(26.43% 0.00800 97.48)",
+          "oklch(37.86% 0.00800 97.48)",
+          "oklch(49.29% 0.00800 97.48)",
+          "oklch(60.71% 0.00800 97.48)",
+          "oklch(72.14% 0.00800 97.48)",
+          "oklch(83.57% 0.00800 97.48)",
+          "oklch(95.00% 0.00800 97.48)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.01113 95.18)",
+          "oklch(26.43% 0.01113 95.18)",
+          "oklch(37.86% 0.01113 95.18)",
+          "oklch(49.29% 0.01113 95.18)",
+          "oklch(60.71% 0.01113 95.18)",
+          "oklch(72.14% 0.01113 95.18)",
+          "oklch(83.57% 0.01113 95.18)",
+          "oklch(95.00% 0.01113 95.18)"
+        ]
+      },
+      "strong": {
+        "role": "neutral",
+        "displayName": "Strong",
+        "tonalRamp": [
+          "oklch(15.00% 0.01193 95.24)",
+          "oklch(26.43% 0.01193 95.24)",
+          "oklch(37.86% 0.01193 95.24)",
+          "oklch(49.29% 0.01193 95.24)",
+          "oklch(60.71% 0.01193 95.24)",
+          "oklch(72.14% 0.01193 95.24)",
+          "oklch(83.57% 0.01193 95.24)",
+          "oklch(95.00% 0.01193 95.24)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Accent",
+        "tonalRamp": [
+          "oklch(15.00% 0.15442 24.99)",
+          "oklch(26.43% 0.15442 24.99)",
+          "oklch(37.86% 0.15442 24.99)",
+          "oklch(49.29% 0.15442 24.99)",
+          "oklch(60.71% 0.15442 24.99)",
+          "oklch(72.14% 0.15442 24.99)",
+          "oklch(83.57% 0.15442 24.99)",
+          "oklch(95.00% 0.15442 24.99)"
+        ]
+      },
+      "positive": {
+        "role": "primary",
+        "displayName": "Positive",
+        "tonalRamp": [
+          "oklch(15.00% 0.07202 182.20)",
+          "oklch(26.43% 0.07202 182.20)",
+          "oklch(37.86% 0.07202 182.20)",
+          "oklch(49.29% 0.07202 182.20)",
+          "oklch(60.71% 0.07202 182.20)",
+          "oklch(72.14% 0.07202 182.20)",
+          "oklch(83.57% 0.07202 182.20)",
+          "oklch(95.00% 0.07202 182.20)"
+        ]
+      },
+      "wash": {
+        "role": "neutral",
+        "displayName": "Wash",
+        "tonalRamp": [
+          "oklch(15.00% 0.00829 91.49)",
+          "oklch(26.43% 0.00829 91.49)",
+          "oklch(37.86% 0.00829 91.49)",
+          "oklch(49.29% 0.00829 91.49)",
+          "oklch(60.71% 0.00829 91.49)",
+          "oklch(72.14% 0.00829 91.49)",
+          "oklch(83.57% 0.00829 91.49)",
+          "oklch(95.00% 0.00829 91.49)"
+        ]
+      },
+      "on-primary": {
+        "role": "primary",
+        "displayName": "On Primary",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Primary Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.01032 106.96)",
+          "oklch(26.43% 0.01032 106.96)",
+          "oklch(37.86% 0.01032 106.96)",
+          "oklch(49.29% 0.01032 106.96)",
+          "oklch(60.71% 0.01032 106.96)",
+          "oklch(72.14% 0.01032 106.96)",
+          "oklch(83.57% 0.01032 106.96)",
+          "oklch(95.00% 0.01032 106.96)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page and authentication headings; mobile overrides are documented in Layout and Typography."
+      },
+      "headline": {
+        "displayName": "Section headline",
+        "purpose": "Forms and receipt headings."
+      },
+      "title": {
+        "displayName": "Request title",
+        "purpose": "Semibold request list titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Readable prose and form controls."
+      },
+      "label": {
+        "displayName": "Status label",
+        "purpose": "Compact dot-and-text states."
+      },
+      "mono": {
+        "displayName": "Identifier",
+        "purpose": "Technical identifiers when present."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "receipt-in",
+        "value": ".22s ease-out",
+        "purpose": "Receipt enters from opacity .55 and translateY(5px), only under prefers-reduced-motion: no-preference."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Filled ink for the main response action.",
+      "html": "<button class=\"ds-primary\">Share securely</button>",
+      "css": ".ds-primary{font-family:var(--font,\"Avenir Next\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif);font-size:16px;line-height:1.55;min-height:48px;padding:10px 17px;border-radius:8px;font-weight:600;cursor:pointer;border:1px solid var(--ink,#111110);background:var(--ink,#111110);color:#fff}.ds-primary:hover{background:#35352f}.ds-primary:focus-visible{outline:3px solid var(--positive,#21695f);outline-offset:4px;}.ds-primary:disabled{cursor:wait;opacity:.6}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined surface for an alternative action; danger uses red text.",
+      "html": "<button class=\"ds-secondary\">Load more</button> <button class=\"ds-secondary ds-danger\">Decline</button>",
+      "css": ".ds-secondary{font-family:var(--font,\"Avenir Next\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif);font-size:16px;line-height:1.55;min-height:48px;padding:10px 17px;border-radius:8px;font-weight:600;cursor:pointer;border:1px solid var(--strong,#8f8d85);background:var(--surface,#fffefa);color:var(--ink,#111110)}.ds-secondary:hover{background:var(--wash,#eeece6)}.ds-secondary:focus-visible{outline:3px solid var(--positive,#21695f);outline-offset:4px;}.ds-secondary:disabled{cursor:wait;opacity:.6}.ds-danger{color:var(--accent,#a52f2f)}"
+    },
+    {
+      "name": "Quiet action",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Low-emphasis refresh or back action.",
+      "html": "<button class=\"ds-quiet\">Refresh</button>",
+      "css": ".ds-quiet{font-family:var(--font,\"Avenir Next\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif);font-size:16px;line-height:1.55;min-height:48px;padding:10px 17px;border-radius:8px;font-weight:600;cursor:pointer;border:0;background:transparent;color:var(--muted,#5c5b56)}.ds-quiet:hover{background:var(--wash,#eeece6);color:var(--ink,#111110)}.ds-quiet:focus-visible{outline:3px solid var(--positive,#21695f);outline-offset:4px;}.ds-quiet:disabled{cursor:wait;opacity:.6}"
+    },
+    {
+      "name": "Credential field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Labeled password input with persistent supporting text; sample contains no secret.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-credential\">Credential</label><input id=\"ds-credential\" type=\"password\" autocomplete=\"off\" aria-describedby=\"ds-hint\"><p id=\"ds-hint\">Paste a key, password, or code. It is sent only to this Concorde.</p></div>",
+      "css": ".ds-field{font-family:var(--font,\"Avenir Next\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif);font-size:16px;line-height:1.55;color:var(--ink,#111110)}.ds-field label{display:block;font-weight:600;margin-bottom:8px}.ds-field input{font-family:var(--font,\"Avenir Next\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif);font-size:16px;line-height:1.55;display:block;width:calc(100% - 28px);padding:13px;border:1px solid var(--strong,#8f8d85);border-radius:8px;background:var(--surface,#fffefa);color:var(--ink,#111110)}.ds-field input:focus-visible{outline:3px solid var(--positive,#21695f);outline-offset:4px;}.ds-field p{font-size:13px;color:var(--muted,#5c5b56);margin:9px 0 0}"
+    },
+    {
+      "name": "Workspace navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Current page identified by ink type and underline.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Owner workspace\"><button aria-current=\"page\">Requests</button><button>Dependencies</button></nav>",
+      "css": ".ds-nav{display:flex;gap:20px;border-bottom:1px solid var(--line,#d2d0c8);margin-bottom:28px}.ds-nav button{font-family:var(--font,\"Avenir Next\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif);font-size:16px;line-height:1.55;min-height:48px;border:0;border-bottom:2px solid transparent;background:none;padding:10px 0;color:var(--muted,#5c5b56);font-weight:600;cursor:pointer}.ds-nav button[aria-current=page]{border-color:var(--ink,#111110);color:var(--ink,#111110)}.ds-nav button:focus-visible{outline:3px solid var(--positive,#21695f);outline-offset:4px;}@media(max-width:700px){.ds-nav{gap:25px}}"
+    },
+    {
+      "name": "Written status",
+      "kind": "custom",
+      "refersTo": "status",
+      "description": "Dot and text communicate need, submission and verification distinctly.",
+      "html": "<div class=\"ds-status-demo\"><span class=\"ds-status ds-pending\">Needs you</span><span class=\"ds-status\">Awaiting verification</span><span class=\"ds-status ds-verified\">Verified by Concorde</span></div>",
+      "css": ".ds-status-demo{display:flex;gap:16px;flex-wrap:wrap}.ds-status{font-family:var(--font,\"Avenir Next\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif);font-size:16px;line-height:1.55;font-size:13px;line-height:1.3;color:var(--muted,#5c5b56);display:inline-flex;align-items:center;gap:7px}.ds-status::before{content:\"\";width:6px;height:6px;flex-shrink:0;border-radius:50%;background:currentColor}.ds-pending{color:var(--accent,#a52f2f)}.ds-verified{color:var(--positive,#21695f)}"
+    },
+    {
+      "name": "Request row",
+      "kind": "custom",
+      "refersTo": "request-row",
+      "description": "Full-width operable request row; fixture explicitly identifies synthetic content.",
+      "html": "<button class=\"ds-request\"><span class=\"ds-company\">Synthetic test Concorde</span><strong>Share a provider credential</strong><span class=\"ds-meta\">Respond by Sep 14, 10:00 AM</span><span class=\"ds-row-status\">Needs you</span></button>",
+      "css": ".ds-request{font-family:var(--font,\"Avenir Next\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif);font-size:16px;line-height:1.55;display:grid;grid-template-columns:1fr auto;gap:6px 16px;width:100%;border:0;border-bottom:1px solid var(--line,#d2d0c8);padding:23px 2px;background:transparent;color:var(--ink,#111110);text-align:left;cursor:pointer}.ds-request:hover{background:var(--wash,#eeece6)}.ds-request:focus-visible{outline:3px solid var(--positive,#21695f);outline-offset:4px;}.ds-company,.ds-meta{font-size:13px;color:var(--muted,#5c5b56);grid-column:1}.ds-request strong{font-size:19px;font-weight:600;grid-column:1;overflow-wrap:anywhere;line-height:1.35}.ds-row-status{grid-column:2;grid-row:1/4;align-self:center;display:inline-flex;align-items:center;gap:7px;font-size:13px;line-height:1.3;color:var(--accent,#a52f2f)}.ds-row-status::before{content:\"\";width:6px;height:6px;flex-shrink:0;border-radius:50%;background:currentColor}@media(max-width:700px){.ds-request{padding:20px 0;grid-template-columns:1fr}.ds-row-status{grid-row:auto;grid-column:1;margin-top:5px}.ds-request strong{font-size:18px}}"
+    },
+    {
+      "name": "Submission receipt",
+      "kind": "card",
+      "refersTo": "receipt",
+      "description": "Unboxed ruled receipt explicitly distinguishes saved response from verification.",
+      "html": "<section class=\"ds-receipt\"><h2>Your part is done.</h2><p>Your response is saved. Concorde has an observation waiting to be delivered and will check the result when it can run. This does not yet mean the dependency works.</p><button class=\"ds-check\">Check for verification</button></section>",
+      "css": ".ds-receipt{font-family:var(--font,\"Avenir Next\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif);font-size:16px;line-height:1.55;color:var(--ink,#111110);border-block:1px solid var(--line,#d2d0c8);padding:24px 0}.ds-receipt h2{font-size:23px;line-height:1.25;font-weight:600;letter-spacing:-.02em;color:var(--positive,#21695f);margin:0 0 9px}.ds-receipt p{margin:0;max-width:70ch}.ds-check{font-family:var(--font,\"Avenir Next\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif);font-size:16px;line-height:1.55;min-height:48px;padding:10px 17px;border-radius:8px;font-weight:600;cursor:pointer;border:0;background:transparent;color:var(--muted,#5c5b56)}.ds-check:hover{background:var(--wash,#eeece6);color:var(--ink,#111110)}.ds-check:focus-visible{outline:3px solid var(--positive,#21695f);outline-offset:4px;}@media(max-width:700px){.ds-receipt{padding:22px 0}}@media(prefers-reduced-motion:no-preference){.ds-receipt{animation:ds-receipt-in .22s ease-out}@keyframes ds-receipt-in{from{opacity:.55;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A precise handoff",
+    "overview": "The owner capability UI is precise, calm and restrained. Familiar mobile controls,\nreadable sans-serif type and fine rules extend Concorde's existing operational\nsurfaces. Visual emphasis follows the request and its action.\n\nThis document describes only `capabilities/owner/web/`, extracted from its actual\nHTML, CSS and components. It does not define the core graph or supersede the\ntechnical architecture in `docs/design.md`. No generated visual comp is a source\nof authority for this system. Frontmatter tokens are normative; their source is\n`capabilities/owner/web/style.css`.",
+    "keyCharacteristics": [
+      "Warm neutral surfaces and near-black type.",
+      "Flat, ruled information groups with restrained status color.",
+      "Readable mobile forms and explicit response states."
+    ],
+    "rules": [
+      {
+        "name": "The State Label Rule",
+        "body": "Status color accompanies a written state. Submission and verified usefulness remain separately named, including when both appear in a receipt.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do extend the existing Concorde mark, warm neutrals and system sans typography.",
+      "Do keep status text visible alongside status color.",
+      "Do preserve readable mobile fields, wrapping content and visible keyboard focus.",
+      "Do distinguish a saved response from a verified outcome in headings and supporting copy."
+    ],
+    "donts": [
+      "Don't introduce raised cards or shadows into the existing flat request surfaces.",
+      "Don't display submitted credential values in receipts or example components.",
+      "Don't treat this capability's visual guidance as a definition of the core graph."
+    ]
+  }
+}

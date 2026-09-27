@@ -1,0 +1,5 @@
+# Set CONCORDE_OWNER_DOMAIN in Caddy's service environment after DNS is ready.
+{$CONCORDE_OWNER_DOMAIN} {
+    reverse_proxy 127.0.0.1:{$CONCORDE_OWNER_PORT}
+    # No access log: enrollment uses fragments and POST but request metadata is private too.
+}

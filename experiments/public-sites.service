@@ -1,0 +1,9 @@
+[Unit]
+Description=Concorde static preview release publisher
+[Service]
+Type=oneshot
+WorkingDirectory=%h/.local/share/concorde-app
+EnvironmentFile=%h/.config/concorde/relay.env
+ExecStart=/usr/bin/python3 -m experiments.public_sites
+TimeoutStartSec=60
+UMask=0022

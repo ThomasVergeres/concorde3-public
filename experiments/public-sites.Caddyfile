@@ -1,0 +1,35 @@
+{
+    admin off
+}
+
+(preview) {
+    @writes not method GET HEAD
+    respond @writes "Public preview: checkout and submissions disabled" 405
+    header {
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"
+        Referrer-Policy "no-referrer"
+        X-Content-Type-Options "nosniff"
+        X-Robots-Tag "noindex, nofollow, noarchive"
+        Permissions-Policy "payment=(), camera=(), microphone=(), geolocation=()"
+        Cache-Control "no-cache"
+    }
+    encode gzip
+    file_server
+}
+
+{$CONCORDE_FORMA_DOMAIN} {
+    root * /srv/forma/current
+    import preview
+}
+{$CONCORDE_SIGNAL_DOMAIN} {
+    root * /srv/signal/current
+    import preview
+}
+{$CONCORDE_ATELIER_DOMAIN} {
+    root * /srv/atelier/current
+    import preview
+}
+{$CONCORDE_MERIT_DOMAIN} {
+    root * /srv/merit/current
+    import preview
+}

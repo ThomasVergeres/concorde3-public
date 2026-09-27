@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "revision": "2026-09-10-v2",
+  "checked_at": "2026-09-10",
+  "basis": "Standard short-context text API prices used only to calibrate relative subscription-development weights; not a bill or subscription credit conversion.",
+  "sources": [
+    "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+    "https://developers.openai.com/api/docs/pricing"
+  ],
+  "relative_weights": {"gpt-5.6-terra": 1, "gpt-5.6-luna": 0.1, "gpt-6-luna": 0.05, "gpt-6-sol": 1},
+  "model_addendum": "2026-09-25: GPT-6 Luna/Sol official prices verified at developers.openai.com/api/docs/models/gpt-6-luna and /gpt-6-sol. Luna6 proxy weight .05 and Sol6 weight 1 match input/cache ratios and conservatively overestimate their output by 20% (fixed legacy multiplier 6 versus current 5). Historical revision/baseline retained. Not an invoice.",
+  "standard_usd_per_million": {
+    "gpt-6-luna": {"input": 0.1, "cached_input": 0.01, "cache_write": 0.125, "output": 0.5},
+    "gpt-6-sol": {"input": 2, "cached_input": 0.2, "cache_write": 2.5, "output": 10},
+    "gpt-5.6-terra": {"input": 2, "cached_input": 0.2, "cache_write": 2.5, "output": 12},
+    "gpt-5.6-luna": {"input": 0.2, "cached_input": 0.02, "cache_write": 0.25, "output": 1.2}
+  },
+  "limitations": "The same 10:1 model ratio holds in the published long-context categories. Historical aggregate usage does not identify cache writes, per-request >272K context surcharges, service tier or subscription consumption. Retain unknown usage. Never apply a per-request context threshold to summed activation/panel input. The frozen Terra baseline and raw historical results are unchanged."
+}

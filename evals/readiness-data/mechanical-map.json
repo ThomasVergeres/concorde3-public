@@ -1,0 +1,21 @@
+{
+  "CORE.F1": ["TestFoundationalLoop", "TestActualCommandLoop", "TestCanceledPreflightActivationRecoveryAndFreshWriteback"],
+  "CORE.F2": ["TestConflictsAtomicAndEvidenceAge", "TestUTF8RecordAndEventPagesPreserveEvidence", "TestUnicodeEvidenceSurvivesRectificationAndRestart", "TestGrowthBounds", "TestHistoryPaginationEndsAndDoesNotInventTotal", "TestHistoryReferenceSurvivesLargeMetadata"],
+  "CORE.F3": ["TestContinuityEligibilityControls", "TestItemMoveSizeAndRetirement"],
+  "CORE.F4": ["TestFocusedWorkingStateAndGlobalRevision", "TestContextBounds"],
+  "CORE.F5": ["TestSemanticAdapterStalenessAndFallback", "TestSemanticNodeTitleInvalidation", "TestSemanticTitleChangeAcrossActivationContext", "TestSemanticLegacyIndexRebuildPreservesCanonicalState", "TestContextSemanticRefreshFailureAcrossRestart"],
+  "CORE.F6": ["TestPhaseLifecycleAndConcurrentCompletion", "TestExactAcknowledgmentsKeepConcurrentEvidence", "TestUnallocatedIntentionConsequenceSurvivesWritebackRestart"],
+  "CORE.F7": ["TestNoMutationNoSuccessorAndRest", "TestContinuityEligibilityControls"],
+  "CORE.F8": ["TestWaitingTimeBound", "TestDocumentedFixedPortfolioWaitingBound", "TestTinyAttentionShareDoesNotInvertPriority", "TestEventFloodPreservesBroadAndOrdinaryShares", "TestFairnessAndSplitConservation"],
+  "CORE.F9": ["TestWatchRectificationAdmissionRestartAndABA", "TestFailedTimerWakeRetained", "TestCompactWatchReferenceSurvivesCompleteLoopAndLegacyState", "TestCompactWatchReferenceCollisionNeverOverwritesEvidence"],
+  "CORE.F10": ["TestMCPInterfaceAndBounds", "TestCLICompleteLoop", "TestCompletionInterfaceNestedSchemaMatchesRuntime", "TestCompletionInterfaceMissingAndStaleSequenceAreDistinctAtomicErrors", "TestCompletionInterfaceAcceptsExistingEdgesAndActivationsButNotUnknownRefs", "TestCompletionAcceptsKnownSourceAndTimerWithoutInventedEvidence", "TestWrongReferenceKindGivesCanonicalRetrievalRoute", "TestTextPagesRejectInvalidBytesAndNonBoundaryOffsets", "TestTruncatedPageCannotReturnANonAdvancingCursor", "TestHistoryPaginationEndsAndDoesNotInventTotal", "TestHistoryReferenceSurvivesLargeMetadata", "TestNodeBoundFeedbackExplainsMetadataAndPreservesAtomicRecovery", "TestNodeBoundFeedbackFitsSmallResponseWithLongestIdentifiers"],
+  "CORE.F11": ["TestActualCommandLoop", "TestWatchActualCLIProgramAndStop", "TestZeroExitDoesNotHideProgramDiagnostics", "TestPulseSupervisesProgramsCreatedDuringWork"],
+  "CORE.F12": ["TestConcurrentAdmissionAndRestartBudget", "TestSupervisorFreezeStopsActualProcesses", "TestRunwayReflectsRefreshTimeAndFiniteHorizon", "TestPulseSupervisesProgramsCreatedDuringWork"],
+  "CORE.N1": ["TestReplayAndPartialTail", "TestCompleteRecordCorruptionRejected", "TestConcurrentAdmissionAndRestartBudget"],
+  "CORE.N2": ["TestReceiptBeforeEffectAndRestart", "TestEffectReplayCollisionAndUncertain", "TestInstanceIsolationAndExpiredAuthority", "TestLargeRecordPagingAndArtifactIsolation"],
+  "CORE.N3": ["TestContextBounds", "TestRunwayBudgetLoweringAndExpiry", "TestCodexMeasuredUsageNotClaimedBusinessSuccess"],
+  "CORE.N4": ["TestFoundationalLoop", "TestSemanticAdapterStalenessAndFallback", "TestContextSemanticRefreshFailureAcrossRestart"],
+  "CORE.N5": ["TestGrowthBounds", "TestLargeRecordPagingAndArtifactIsolation", "TestArtifactPagesPreserveUTF8AndRespectLimits", "TestEscapedArtifactRemainsRetrievableWithinResponseBudget", "TestHistoryPaginationEndsAndDoesNotInventTotal", "TestHistoryReferenceSurvivesLargeMetadata"],
+  "CORE.N6": ["TestNoMutationNoSuccessorAndRest", "TestKitsAndDomainContext", "TestCompletionInterfaceMCPNoEditCompletionRestartAndEventReentry"],
+  "CORE.N7": ["TestRecordedDispatchContextReplay"]
+}

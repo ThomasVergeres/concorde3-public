@@ -1,0 +1,254 @@
+#!/usr/bin/env bash
+# Foreground supervisor for Codex's supported app-server daemon manager.
+# This process is owned by a user's systemd manager; the actual app
+# server remains managed by `codex app-server daemon`.
+set -uo pipefail
+
+readonly CODEX_USER_HOME=${HOME:?HOME must be set by the user service manager}
+export PATH="$CODEX_USER_HOME/.local/bin:$CODEX_USER_HOME/.codex/packages/standalone/current/bin:/usr/local/bin:/usr/bin:/bin"
+
+readonly CODEX=${CODEX_BIN:-$CODEX_USER_HOME/.codex/packages/standalone/current/bin/codex}
+readonly STATE_DIR=${CODEX_REMOTE_STATE_DIR:-$CODEX_USER_HOME/.local/state/codex-remote-control}
+readonly STATE_FILE="$STATE_DIR/status.json"
+readonly AUTH_FILE=${CODEX_AUTH_FILE:-$CODEX_USER_HOME/.codex/auth.json}
+readonly DAEMON_DIR=${CODEX_DAEMON_DIR:-$CODEX_USER_HOME/.codex/app-server-daemon}
+readonly DAEMON_LOG="$DAEMON_DIR/app-server.stderr.log"
+readonly POLL_SECONDS=30
+readonly AUTH_POLL_SECONDS=60
+readonly ERROR_THRESHOLD=10
+readonly MAX_RESTART_DELAY=1800
+
+mkdir -p "$STATE_DIR"
+chmod 700 "$STATE_DIR"
+umask 077
+
+log() {
+    printf '%s codex-remote-supervisor: %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$*"
+}
+
+auth_mtime() {
+    stat -c %Y "$AUTH_FILE" 2>/dev/null || printf '0\n'
+}
+
+write_state() {
+    local state=$1
+    local detail=${2:-}
+    local tmp="$STATE_FILE.$$"
+    jq -nc \
+        --arg state "$state" \
+        --arg detail "$detail" \
+        --arg updated_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+        --argjson auth_mtime "$(auth_mtime)" \
+        '{state:$state,detail:$detail,updated_at:$updated_at,auth_mtime:$auth_mtime}' >"$tmp" && mv -f "$tmp" "$STATE_FILE"
+}
+
+pid_record_is_valid() {
+    local record=$1
+    local expected=$2
+    local pid recorded_start actual_start cmdline
+
+    pid=$(jq -er '.pid | numbers' "$record" 2>/dev/null) || return 1
+    recorded_start=$(jq -er '.processStartTime | strings' "$record" 2>/dev/null) || return 1
+    kill -0 "$pid" 2>/dev/null || return 1
+    cmdline=$(tr '\0' ' ' <"/proc/$pid/cmdline" 2>/dev/null) || return 1
+    actual_start=$(ps -p "$pid" -o lstart= 2>/dev/null | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    [[ "$actual_start" == "$recorded_start" ]] || return 1
+
+    case "$expected" in
+        updater) [[ "$cmdline" == *codex*"pid-update-loop"* ]] ;;
+        server)  [[ "$cmdline" == *codex*"app-server"* ]] ;;
+        *) return 1 ;;
+    esac
+}
+
+quarantine_stale_pid_record() {
+    local record=$1
+    local expected=$2
+    local stale
+    [[ -f "$record" ]] || return 0
+    pid_record_is_valid "$record" "$expected" && return 0
+
+    stale="$record.stale.$(date -u +%Y%m%dT%H%M%SZ)"
+    mv -f "$record" "$stale"
+    log "quarantined stale PID record: $record"
+}
+
+repair_pid_records() {
+    quarantine_stale_pid_record "$DAEMON_DIR/app-server-updater.pid" updater
+    quarantine_stale_pid_record "$DAEMON_DIR/app-server.pid" server
+}
+
+network_available() {
+    getent ahosts chatgpt.com >/dev/null 2>&1
+}
+
+daemon_running() {
+    # A live local server must survive remote transport/RPC failures. The PID
+    # check validates process start time and command line against PID reuse.
+    pid_record_is_valid "$DAEMON_DIR/app-server.pid" server && return 0
+    local output
+    output=$(timeout 20 "$CODEX" app-server daemon version 2>/dev/null) || return 1
+    jq -e '.status == "running"' >/dev/null 2>&1 <<<"$output"
+}
+
+updater_running() {
+    pid_record_is_valid "$DAEMON_DIR/app-server-updater.pid" updater
+}
+
+log_offset=0
+reset_log_offset() {
+    log_offset=$(stat -c %s "$DAEMON_LOG" 2>/dev/null || printf '0\n')
+}
+
+new_log_has_auth_failure() {
+    local size found=1
+    size=$(stat -c %s "$DAEMON_LOG" 2>/dev/null || printf '0\n')
+    if (( size < log_offset )); then
+        log_offset=0
+    fi
+    if (( size > log_offset )); then
+        if tail -c "+$((log_offset + 1))" "$DAEMON_LOG" 2>/dev/null | \
+            grep -Eqi 'refresh_token_reused|token_expired|Failed to refresh token|authentication[^[:cntrl:]]*expired|Please (log out and )?sign in again'; then
+            found=0
+        fi
+        log_offset=$size
+    fi
+    return "$found"
+}
+
+remote_state() {
+    local output rc parsed
+    output=$(timeout 30 "$CODEX" remote-control --json 2>&1)
+    rc=$?
+    REMOTE_DETAIL=$(printf '%s' "$output" | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g;s/^ //;s/ $//' | cut -c1-500)
+
+    parsed=$(jq -er '.status | strings' 2>/dev/null <<<"$output") || parsed=''
+    case "$parsed" in
+        connected|connecting|errored|stopped)
+            REMOTE_STATE=$parsed
+            return "$rc"
+            ;;
+    esac
+
+    case "${output,,}" in
+        *"not logged in"*|*"please log in"*|*"please sign in"*|*"token_expired"*|*"refresh_token_reused"*) REMOTE_STATE=auth_required ;;
+        *"connection is errored"*|*'"status":"errored"'*) REMOTE_STATE=errored ;;
+        *"connecting"*) REMOTE_STATE=connecting ;;
+        *"connected"*) REMOTE_STATE=connected ;;
+        *) REMOTE_STATE=errored ;;
+    esac
+    return "$rc"
+}
+
+start_managed_daemon() {
+    local output rc
+    repair_pid_records
+    reset_log_offset
+    output=$(timeout 120 "$CODEX" app-server daemon bootstrap --remote-control 2>&1)
+    rc=$?
+    output=$(printf '%s' "$output" | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g;s/^ //;s/ $//' | cut -c1-500)
+    if (( rc != 0 )); then
+        log "daemon bootstrap failed (exit $rc): $output"
+        return "$rc"
+    fi
+    log "Codex daemon bootstrap completed: $output"
+    return 0
+}
+
+trap 'write_state stopped "systemd stopped the supervisor"; exit 0' TERM INT
+
+write_state connecting "waiting for host networking"
+until network_available; do
+    log "network is not available yet; waiting"
+    sleep 10
+done
+
+if ! "$CODEX" login status >/dev/null 2>&1; then
+    write_state auth_required "Codex is not logged in; run: codex login"
+    auth_failure_mtime=$(auth_mtime)
+else
+    auth_failure_mtime=''
+fi
+
+reset_log_offset
+restart_delay=300
+next_restart_epoch=0
+error_count=0
+
+while true; do
+    if [[ -n "${auth_failure_mtime:-}" ]]; then
+        current_auth_mtime=$(auth_mtime)
+        if [[ "$current_auth_mtime" != "$auth_failure_mtime" ]] && "$CODEX" login status >/dev/null 2>&1; then
+            log "credential file changed; resuming after interactive authentication"
+            auth_failure_mtime=''
+            error_count=0
+            restart_delay=300
+            write_state connecting "credentials changed; starting Codex Remote Control"
+            continue
+        fi
+        sleep "$AUTH_POLL_SECONDS"
+        continue
+    fi
+
+    if ! network_available; then
+        write_state connecting "host networking or DNS is unavailable"
+        sleep "$POLL_SECONDS"
+        continue
+    fi
+
+    # Missing updater alone is not grounds to disturb an existing server.
+    if ! daemon_running; then
+        write_state connecting "starting Codex's managed daemon"
+        if ! start_managed_daemon; then
+            if new_log_has_auth_failure || ! "$CODEX" login status >/dev/null 2>&1; then
+                log "authentication is required; stopping retries until credentials change"
+                auth_failure_mtime=$(auth_mtime)
+                write_state auth_required "run: codex logout && codex login"
+            else
+                write_state errored "Codex daemon bootstrap failed; see the user journal"
+                sleep "$restart_delay"
+                restart_delay=$(( restart_delay * 2 ))
+                (( restart_delay > MAX_RESTART_DELAY )) && restart_delay=$MAX_RESTART_DELAY
+            fi
+            continue
+        fi
+        sleep 5
+    fi
+
+    remote_state || true
+    if new_log_has_auth_failure || [[ "$REMOTE_STATE" == auth_required ]]; then
+        log "authentication failure detected; preserving local work and waiting for interactive login"
+        auth_failure_mtime=$(auth_mtime)
+        write_state auth_required "run: codex logout && codex login"
+        continue
+    fi
+
+    case "$REMOTE_STATE" in
+        connected)
+            write_state connected "$REMOTE_DETAIL"
+            error_count=0
+            restart_delay=300
+            next_restart_epoch=0
+            ;;
+        connecting)
+            write_state connecting "$REMOTE_DETAIL"
+            error_count=$((error_count + 1))
+            ;;
+        *)
+            write_state errored "$REMOTE_DETAIL"
+            error_count=$((error_count + 1))
+            ;;
+    esac
+
+    now=$(date +%s)
+    if (( error_count >= ERROR_THRESHOLD && now >= next_restart_epoch )); then
+        log "Remote Control remained $REMOTE_STATE; preserving local work; daemon owns reconnection"
+        next_restart_epoch=$((now + restart_delay))
+        restart_delay=$((restart_delay * 2))
+        (( restart_delay > MAX_RESTART_DELAY )) && restart_delay=$MAX_RESTART_DELAY
+        error_count=0
+        write_state "$REMOTE_STATE" "Remote connection unavailable; local daemon preserved"
+    fi
+
+    sleep "$POLL_SECONDS"
+done

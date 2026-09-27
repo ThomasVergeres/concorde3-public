@@ -1,0 +1,421 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-10",
+  "basis": "24 historical Terra medium subscription trials; not an invoice or a controlled model speed comparison",
+  "weights": {
+    "uncached_input": 1,
+    "cached_input": 0.1,
+    "output": 6
+  },
+  "soft_multiplier": 3,
+  "rows": [
+    {
+      "id": "1beb2f8aa3ca",
+      "case": "AR08",
+      "variant": "challenge",
+      "world_seed": 2,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 748942,
+        "output": 3971,
+        "cached": 650752,
+        "quality": "measured"
+      },
+      "result_sha256": "f3681fe9aa96f824e39004df316c83d85b5ec6400c885ae2a6aa124a5b172894",
+      "private_locator": "c3-coverage-candidate-20260910/fast/1beb2f8aa3ca/result.json"
+    },
+    {
+      "id": "2f9ba7c390a4",
+      "case": "AR08",
+      "variant": "control",
+      "world_seed": 2,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 395842,
+        "output": 3421,
+        "cached": 346624,
+        "quality": "measured"
+      },
+      "result_sha256": "6ebf1cd2560d0c267f778a3bec2eb73957dae12953f95a750573ea863ad21f39",
+      "private_locator": "c3-coverage-candidate-20260910/fast/2f9ba7c390a4/result.json"
+    },
+    {
+      "id": "33a71a0d3d24",
+      "case": "AR06",
+      "variant": "challenge",
+      "world_seed": 2,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 718462,
+        "output": 5558,
+        "cached": 622592,
+        "quality": "measured"
+      },
+      "result_sha256": "5044beeae943c7c37f3e5e3ef80d0677ec4828f8e8662c7364b368a114c7af6b",
+      "private_locator": "c3-coverage-candidate-20260910/fast/33a71a0d3d24/result.json"
+    },
+    {
+      "id": "43b79d1551de",
+      "case": "AR06",
+      "variant": "challenge",
+      "world_seed": 1,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 609478,
+        "output": 4116,
+        "cached": 535808,
+        "quality": "measured"
+      },
+      "result_sha256": "adc4e2d61c31ceee5719da7dda10af3642340a1a78739d9116f9256b5d2a1a3f",
+      "private_locator": "c3-coverage-candidate-20260910/fast/43b79d1551de/result.json"
+    },
+    {
+      "id": "51ece0dd07a5",
+      "case": "AR08",
+      "variant": "control",
+      "world_seed": 1,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 697513,
+        "output": 4487,
+        "cached": 625408,
+        "quality": "measured"
+      },
+      "result_sha256": "af1166a638771044687efb7db016091ad218a44a07a3292fda762da4f923833a",
+      "private_locator": "c3-coverage-candidate-20260910/fast/51ece0dd07a5/result.json"
+    },
+    {
+      "id": "5df579973b48",
+      "case": "AR07",
+      "variant": "control",
+      "world_seed": 3,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 426331,
+        "output": 4003,
+        "cached": 348672,
+        "quality": "measured"
+      },
+      "result_sha256": "6d1a0df7a73c7af093c96567d7567a14f6b4c77fd47294295a34a4412ab40fe7",
+      "private_locator": "c3-coverage-candidate-20260910/fast/5df579973b48/result.json"
+    },
+    {
+      "id": "673e8ba78e18",
+      "case": "AR07",
+      "variant": "control",
+      "world_seed": 1,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 670806,
+        "output": 5420,
+        "cached": 608000,
+        "quality": "measured"
+      },
+      "result_sha256": "cb583cee3a8d273bbe1d1f9506aa4262c13554b3bfd83c6f060e711acfd72eb4",
+      "private_locator": "c3-coverage-candidate-20260910/fast/673e8ba78e18/result.json"
+    },
+    {
+      "id": "76aa29e7c94a",
+      "case": "AR08",
+      "variant": "challenge",
+      "world_seed": 1,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 447905,
+        "output": 3431,
+        "cached": 409088,
+        "quality": "measured"
+      },
+      "result_sha256": "185e1dc769328bf1916aa9e3508d7cef2b298c274a7aeb017e6007aba9bdbf98",
+      "private_locator": "c3-coverage-candidate-20260910/fast/76aa29e7c94a/result.json"
+    },
+    {
+      "id": "9ac197908e89",
+      "case": "AR08",
+      "variant": "control",
+      "world_seed": 3,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 610283,
+        "output": 5733,
+        "cached": 551936,
+        "quality": "measured"
+      },
+      "result_sha256": "c956cdcbff18f72506c21c3cbe74b57ea66e13edfd3262a93da4bf86b4198b8f",
+      "private_locator": "c3-coverage-candidate-20260910/fast/9ac197908e89/result.json"
+    },
+    {
+      "id": "a3f0f7584d68",
+      "case": "AR06",
+      "variant": "control",
+      "world_seed": 2,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 543407,
+        "output": 3403,
+        "cached": 479488,
+        "quality": "measured"
+      },
+      "result_sha256": "7089aa7d1efb825f2f8c16bd08af7027b946352f5795fff35510011f08677a5a",
+      "private_locator": "c3-coverage-candidate-20260910/fast/a3f0f7584d68/result.json"
+    },
+    {
+      "id": "abd3302436fd",
+      "case": "AR07",
+      "variant": "challenge",
+      "world_seed": 2,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 325553,
+        "output": 2553,
+        "cached": 271360,
+        "quality": "measured"
+      },
+      "result_sha256": "f5979b8bba61baabdef75b807eb5a991355fac706c1be4bcc7cfe76c733b92a6",
+      "private_locator": "c3-coverage-candidate-20260910/fast/abd3302436fd/result.json"
+    },
+    {
+      "id": "ae589777f2b4",
+      "case": "AR06",
+      "variant": "control",
+      "world_seed": 1,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 422898,
+        "output": 2393,
+        "cached": 381952,
+        "quality": "measured"
+      },
+      "result_sha256": "735c99b2eb5f4825c82bca6800ee8508350d4762f66a21908a7686b1b386d45b",
+      "private_locator": "c3-coverage-candidate-20260910/fast/ae589777f2b4/result.json"
+    },
+    {
+      "id": "c1bd234d8dce",
+      "case": "AR06",
+      "variant": "challenge",
+      "world_seed": 3,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 442136,
+        "output": 3700,
+        "cached": 380416,
+        "quality": "measured"
+      },
+      "result_sha256": "0ca31dd0ba4e402b11aa5c0d6c511e1543c0d1e96178c2fc6b612090c48b9a90",
+      "private_locator": "c3-coverage-candidate-20260910/fast/c1bd234d8dce/result.json"
+    },
+    {
+      "id": "ce57b7efb42e",
+      "case": "AR07",
+      "variant": "challenge",
+      "world_seed": 1,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 692789,
+        "output": 4253,
+        "cached": 604928,
+        "quality": "measured"
+      },
+      "result_sha256": "64cdb1829702f2895ae4ebc1e685cb5b5c70b543d0270dfae02bd1df8ec327aa",
+      "private_locator": "c3-coverage-candidate-20260910/fast/ce57b7efb42e/result.json"
+    },
+    {
+      "id": "da99952011b2",
+      "case": "AR08",
+      "variant": "challenge",
+      "world_seed": 3,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 674120,
+        "output": 4819,
+        "cached": 629504,
+        "quality": "measured"
+      },
+      "result_sha256": "76848d3fff687fc07e8cc195a5c06ab4779a9dfab8c2fc998206a4e30a5b9ef3",
+      "private_locator": "c3-coverage-candidate-20260910/fast/da99952011b2/result.json"
+    },
+    {
+      "id": "eac193fd466f",
+      "case": "AR06",
+      "variant": "control",
+      "world_seed": 3,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 398487,
+        "output": 3268,
+        "cached": 348672,
+        "quality": "measured"
+      },
+      "result_sha256": "e287bc4bd9f0c5c5121e6e3cae23440f5f551c3e0ed55fd48c3ebf19636099e8",
+      "private_locator": "c3-coverage-candidate-20260910/fast/eac193fd466f/result.json"
+    },
+    {
+      "id": "ed1163a4cc3c",
+      "case": "AR07",
+      "variant": "challenge",
+      "world_seed": 3,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 492463,
+        "output": 4059,
+        "cached": 437248,
+        "quality": "measured"
+      },
+      "result_sha256": "d8e1c65f0f5501e4bbda554cb83961a3c129013546af0b8602719ac1f1626511",
+      "private_locator": "c3-coverage-candidate-20260910/fast/ed1163a4cc3c/result.json"
+    },
+    {
+      "id": "f9baaf6ab3c9",
+      "case": "AR07",
+      "variant": "control",
+      "world_seed": 2,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 636472,
+        "output": 5266,
+        "cached": 581376,
+        "quality": "measured"
+      },
+      "result_sha256": "b16cbc3430fefec026d2c75b36749d0df683f59110881b97135731d2365363b1",
+      "private_locator": "c3-coverage-candidate-20260910/fast/f9baaf6ab3c9/result.json"
+    },
+    {
+      "id": "0a6ad6b7e9cc",
+      "case": "AR05",
+      "variant": "control",
+      "world_seed": 1,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 985657,
+        "output": 6344,
+        "cached": 898560,
+        "quality": "measured"
+      },
+      "result_sha256": "82fdd6ca983577d842aa53f0c8637210e6f85d4f519c55184ab7aeb265273503",
+      "private_locator": "c3-coverage-candidate-source-fixed-20260910/0a6ad6b7e9cc/result.json"
+    },
+    {
+      "id": "66b33cf82181",
+      "case": "AR05",
+      "variant": "challenge",
+      "world_seed": 2,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 877867,
+        "output": 6456,
+        "cached": 754176,
+        "quality": "measured"
+      },
+      "result_sha256": "ddde63b0068e165da011ea318e37d0d4f6ce58c0e02e80c598ebc52b3b983a8a",
+      "private_locator": "c3-coverage-candidate-source-fixed-20260910/66b33cf82181/result.json"
+    },
+    {
+      "id": "6955153be4c2",
+      "case": "AR05",
+      "variant": "control",
+      "world_seed": 3,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 1067566,
+        "output": 8875,
+        "cached": 940288,
+        "quality": "measured"
+      },
+      "result_sha256": "61f1ea08653044b8b80457feb477fe28a0ca81ea32a586f9738441bd45e4ec50",
+      "private_locator": "c3-coverage-candidate-source-fixed-20260910/6955153be4c2/result.json"
+    },
+    {
+      "id": "6ea55410875a",
+      "case": "AR05",
+      "variant": "challenge",
+      "world_seed": 1,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 1227868,
+        "output": 7152,
+        "cached": 1085696,
+        "quality": "measured"
+      },
+      "result_sha256": "768695795f97a73736606e5e294683cb199ab92c03a4132ad20f19c2fb66de80",
+      "private_locator": "c3-coverage-candidate-source-fixed-20260910/6ea55410875a/result.json"
+    },
+    {
+      "id": "c3f2a86d248a",
+      "case": "AR05",
+      "variant": "control",
+      "world_seed": 2,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 1240622,
+        "output": 7217,
+        "cached": 1104640,
+        "quality": "measured"
+      },
+      "result_sha256": "3018f6d91fdcc9a5649a0408a701e932d7befb8e0673571aa719d38b01720e5f",
+      "private_locator": "c3-coverage-candidate-source-fixed-20260910/c3f2a86d248a/result.json"
+    },
+    {
+      "id": "f7ba0efe8193",
+      "case": "AR05",
+      "variant": "challenge",
+      "world_seed": 3,
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "image": "sha256:246086351367eec5b45f2a7e0e9f163edc98d462363f0d842d624eaef69d87df",
+      "usage": {
+        "input": 1051208,
+        "output": 7039,
+        "cached": 921088,
+        "quality": "measured"
+      },
+      "result_sha256": "fe7166e84db5728086308e80c4e901a47376f65453aeb56dde1645ccdeb2af5c",
+      "private_locator": "c3-coverage-candidate-source-fixed-20260910/f7ba0efe8193/result.json"
+    }
+  ]
+}

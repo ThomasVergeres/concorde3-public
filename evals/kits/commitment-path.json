@@ -1,0 +1,7 @@
+{
+  "item": "memory-practice",
+  "replace": "still apply: promises need authority, capability and a feasible execution path\nthrough their actual delivery/support/settlement horizon, not just a supplier's\navailability.",
+  "with": "still apply: promises need authority and feasible dependencies from their actual\ntrigger through fulfillment. Starting before a cutoff is not finishing before it.\nAlign prose with configured terms. Independent coverage need not require your\nfuture attention.",
+  "status": "candidate; not promoted to default practices",
+  "reason": "Test composition of already-served dependency facts without imposing a business tactic, scheduler policy, or required thinking sequence."
+}
